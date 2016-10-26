@@ -27,7 +27,7 @@ webdriver.WebDriver.prototype.saveScreenshot = function(filename) {
 };
 
 //do tests
-driver.get('https://github.com/');
+driver.get('https://www.github.com/');
 
 driver.wait(until.titleIs('How people build software · GitHub'), 3000).catch(function(e) {
 	console.log("langing page title NOT found");
@@ -37,7 +37,7 @@ driver.wait(until.titleIs('How people build software · GitHub'), 3000).catch(fu
 clickAndWait('js-selected-navigation-item nav-item nav-item-personal', 'Learn how developers build software · GitHub'); //clicking personal link and checking youre on the right page
 driver.saveScreenshot('personal_page.png');
 
-clickAndWait('js-selected-navigation-item nav-item nav-item-opensource', 'Learn how developers build software · GitHub'); //clicking open source link and checking youre on the right page
+clickAndWait('js-selected-navigation-item nav-item nav-item-opensource', 'Where open source communities live · GitHub'); //clicking open source link and checking youre on the right page
 driver.saveScreenshot('opensource_page.png');
 
 clickAndWait('js-selected-navigation-item nav-item nav-item-business', 'Bring GitHub to work · GitHub'); //clicking business page and checking youre on the right page
@@ -46,17 +46,14 @@ driver.saveScreenshot('itembusiness_page.png');
 clickAndWait('octicon octicon-mark-github','How people build software · GitHub'); // clicking octicat image and checking youre on the home page
 driver.saveScreenshot('back_to_homepage.png');
 
-// driver.findElement(By.name('user[login]')).sendKeys('amcd1443');
-// driver.findElement(By.name('user[email]')).sendKeys('acmd1443@gmail.com');
-// driver.findElement(By.name('user[password]')).sendKeys('amcdamcd14431443');
-// driver.findElement(By.className('btn btn-theme-green btn-jumbotron btn-block')).click();
-// driver.wait(until.titleIs('Join GitHub · GitHub'), 3000).catch(function(e) {
-// 	console.log("sign-in page title NOT found");
-// })
+driver.findElement(By.name('user[login]')).sendKeys('amcd1443');
+driver.findElement(By.name('user[email]')).sendKeys('acmd1443@gmail.com');
+driver.findElement(By.name('user[password]')).sendKeys('amcdamcd14431443');
+driver.findElement(By.className('btn btn-theme-green btn-jumbotron btn-block')).click();
+driver.wait(until.titleIs('Join GitHub · GitHub'), 3000).catch(function(e) {
+	console.log("sign-in page title NOT found");
+})
 
-
-
-    
 
 
 driver.quit();
